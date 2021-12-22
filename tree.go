@@ -10,7 +10,7 @@ type Tree interface {
 	Insert(clock LC, ref TxRef) error
 	// GetRoot returns the accumulated data for the entire Tree
 	GetRoot() Data
-	// GetZeroTo Data for LC-range [0, ceil(clock/leaf
+	// GetZeroTo Data for LC-range [0, ceil(clock/leafSize)*leafSize)
 	GetZeroTo(clock LC) (Data, error)
 	// DropLeaves shrinks the Tree by dropping all leaves. The parent of a leaf will become the new leaf
 	DropLeaves()
